@@ -7,9 +7,9 @@ import './App.css';
 class App extends React.Component {
   state = {
     //单选，值为字符串
-    // selectedOption: "skirt",
+    // selectedOption: "",
     //多选，值为数组
-    selectedOption: ['skirt','sweater','trousers','sleeve','sweater','overcoat','jackets','dress','skirts'],
+    selectedOption: [],
     options : [
       { value:'shoes',label:'鞋子' },
       { value:'skirt',label:'裙子' },
@@ -39,12 +39,13 @@ class App extends React.Component {
        <Selects
           width='500px'
           multiple={true}
-          openSearch={false}
+          openClose = {false}
+          openSearch={true}
           value={selectedOption}
           onChange={this.handleChange}
           options={options}
         />
-        <button style={{'margin-left':'12px'}} onClick={this.getValue}>获取值</button>
+        <button style={{marginLeft:'12px'}} onClick={this.getValue}>获取值</button>
        </div>
     </div>
     );
